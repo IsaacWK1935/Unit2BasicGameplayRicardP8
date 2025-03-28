@@ -5,13 +5,17 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     public GameObject[] animalPrefabs;
-    private float spawnRangeX = 20;
+    private float spawnRangeX = 15;
+    private float spawnRangeZ = 15;
+    private float spawnposX = 15;
     private float spawnPosZ = 20;
 
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnRandomAnimal", 2, 1.5f);
+        InvokeRepeating("SpawnRandomAnimalUp", 2, 1.5f);
+        InvokeRepeating("SpawnRandomAnimalLeft", 2, 1.5f);
+        InvokeRepeating("SpawnRandomAnimalRight", 2, 1.5f);
     }
 
     // Update is called once per frame
@@ -20,7 +24,23 @@ public class SpawnManager : MonoBehaviour
         
     }
 
-    void SpawnRandomAnimal()
+    void SpawnRandomAnimalUp()
+    {
+        int animalIndex = Random.Range(0, animalPrefabs.Length);
+        Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 0, spawnPosZ);
+
+        Instantiate(animalPrefabs[animalIndex], spawnPos, animalPrefabs[animalIndex].transform.rotation);
+    }
+
+    void SpawnRandomAnimalLeft()
+    {
+        int animalIndex = Random.Range(0, animalPrefabs.Length);
+        Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 0, spawnPosZ);
+
+        Instantiate(animalPrefabs[animalIndex], spawnPos, animalPrefabs[animalIndex].transform.rotation);
+    }
+
+    void SpawnRandomAnimalRight() 
     {
         int animalIndex = Random.Range(0, animalPrefabs.Length);
         Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 0, spawnPosZ);

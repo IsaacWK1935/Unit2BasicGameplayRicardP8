@@ -5,8 +5,12 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float horizontalInput;
+    public float verticalInput;
     public float speed = 10f;
-    public float xRange = 18f;
+    public float xRange = 20f;
+    public float zRange = 20f;
+    public float zRangeTop = 15;
+    public float zRangeBottom = 0;
 
     public GameObject projectilePrefab;
 
@@ -28,8 +32,21 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
         }
+
+        if (transform.position.z > zRangeTop)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, zRangeTop);
+        }
+        if (transform.position.z < zRangeBottom)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, -zRangeBottom);
+        }
+
         horizontalInput = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
+
+        verticalInput = Input.GetAxis("Vertical");
+        transform.Translate(Vector3.forward * verticalInput * Time.deltaTime * speed);
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
