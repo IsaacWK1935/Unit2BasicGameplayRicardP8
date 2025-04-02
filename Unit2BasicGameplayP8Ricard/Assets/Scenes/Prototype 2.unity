@@ -784,8 +784,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   horizontalInput: 0
+  verticalInput: 0
   speed: 20
   xRange: 15
+  zRange: 20
+  zRangeTop: 15
+  zRangeBottom: 0
   projectilePrefab: {fileID: 4569293637070157235, guid: 669e5c8b5db8e384e89c95da6e59edee, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
