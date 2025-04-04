@@ -80,7 +80,7 @@ GameObject:
   - component: {fileID: 7418117393108091737}
   m_Layer: 0
   m_Name: Animal_Horse_Black
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -185,6 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9d030e535344ca43bbf52472995c57a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerHealth: 3
 --- !u!1 &1143068422459447982
 GameObject:
   m_ObjectHideFlags: 0

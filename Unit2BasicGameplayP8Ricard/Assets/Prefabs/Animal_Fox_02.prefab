@@ -696,7 +696,7 @@ GameObject:
   - component: {fileID: 8590097240878359738}
   m_Layer: 0
   m_Name: Animal_Fox_02
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -807,6 +807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9d030e535344ca43bbf52472995c57a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerHealth: 3
 --- !u!1 &6213400694334063910
 GameObject:
   m_ObjectHideFlags: 0
